@@ -1,0 +1,18 @@
+<br><center>Калькулятор<br></center>
+<% if @check == false %>
+    Используйте операции из списка <br>
+<% end %>
+<p>
+Пример запроса: <br>
+/calc?x=2.5&y=3.5&operation=degree <br>
+<ins>Где x - введите первый аргумент, y - введите второй аргумент, operation - выбор операций, x и y - поумолчанию равны 0 </ins><br> 
+<p>
+Список операции: <br>
+<ol>
+    <li> multiply -  умножение; <br>
+    <li> addition - сложение; <br>
+    <li> subtraction - вычитание; <br>
+    <li> division - деление; <br>
+    <li> degree - степень; <br> </br>
+</ol>
+результат = <%= @result %>

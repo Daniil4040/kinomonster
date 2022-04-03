@@ -1,0 +1,28 @@
+#--общие команды
+rails s - запуск сервера
+Ctrl + c - остановка сервера 
+bundle - обновить gem из файла gemfile
+rails db:migrate - запустить миграции
+rails routes - просмотреть "роутинги"
+rails g scaffold films name:string rating:float year:integer link_youtube:string director:string description:string - запуск scaffold 
+rails c - запуск консоли
+exit - выход из консоли
+Rails.cache.clear - очистка кэша(запуск в консоли)
+rails db:migrate:reset - удаление всех таблиц и запуск миграций
+rails g migration AddColumnToFilmCategory - создание новых миграций 
+
+-----Команды базы данных-----(выполняются в консоли rails c)
+Film.count кол-во записи в таблице 
+Film.create!(name: "Интерстейлар", rating: 7.2, year: 2013, link_youtube: "https://www.youtube.com/watch?v=qcPfI0y7wRU", director: "Джон Кэмирон", description: "Научно-фантастический фильм")
+film = Film.find(1) - поиск по id (работает и без присваивания)
+Film.find(1).name - поиск по id (работает и без присваивания)
+Film.find_by(name: "Интерстейлар") - поиск по названию
+Film.all - получить все записи ввиде массива []
+Film.first - получение первой записи 
+Film.last - получение последней записи
+Film.create!(name: "Матрица", rating: 8, year: 2008, link_youtube: "https://www.youtube.com/watch?v=fvdYOMHCqcg", director: "Вачёвский", description: "Фантастика будущего")
+
+-----Патерн MVC(MTV)--------
+Необходимо добавить пути routes.rb
+get  '/multiply/', to: 'calculators#multiply' # get - метод, /multiply/ - путь(в браузере), calculators - контроллер, multiply - функция(экшн)
+M - модель(model), V - views(templates) C - controller

@@ -1,0 +1,8 @@
+name 
+rating
+year
+link_youtube
+director
+description
+review - отдельная таблица, один к многим
+category_id - ссылка на категорию
