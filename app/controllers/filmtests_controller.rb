@@ -1,5 +1,9 @@
 class FilmtestsController < ApplicationController
+    # def index
+    #     puts "Привет"
+    # end
+
     def index
-        puts "Привет"
+        @films = Film.all
     end
 end

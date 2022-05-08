@@ -1,15 +1,21 @@
-<p style="color: green"><%= notice %></p>
+<div class="content">
+	<p style="color: green"><%= notice %></p>
 
-<h1>Films</h1>
+	<h1>Films</h1>
 
-<div id="films">
-  <% @films.each do |film| %>
-    <%= render film %>
-    <p>
-      <%= link_to "Show this film", film %>
-      <hr>
-    </p>
-  <% end %>
+	<div id="films">
+	<% @films.each do |film| %>
+		<div class="info_film"><img src="assets/img/inter.png">
+			<%= film.description %>
+			<div class="button"><a href="show.html">Смотреть</a></div>
+		</div>
+
+		<p>
+		<%= link_to "Show this film", film %>
+		<hr>
+		</p>
+	<% end %>
+	</div>
+
+	<%= link_to "New film", new_film_path %>
 </div>
-
-<%= link_to "New film", new_film_path %>

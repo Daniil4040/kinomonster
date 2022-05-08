@@ -9,7 +9,9 @@ rails c - запуск консоли
 exit - выход из консоли
 Rails.cache.clear - очистка кэша(запуск в консоли)
 rails db:migrate:reset - удаление всех таблиц и запуск миграций
-rails g migration AddColumnToFilmCategory - создание новых миграций 
+rails g migration AddColumnToFilmCategory - создание новых миграций
+rake db:rollback STEP=1 - откатывает 1 мигрцию
+rails db:migrate:status - посмотреть статус какие были применённые 
 
 -----Команды базы данных-----(выполняются в консоли rails c)
 Film.count кол-во записи в таблице 

@@ -22,6 +22,9 @@ class FilmsController < ApplicationController
 
   # POST /films or /films.json
   def create
+    puts "*" * 50
+    puts film_params
+    puts "*" * 50
     @film = Film.new(film_params)
 
     respond_to do |format|

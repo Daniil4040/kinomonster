@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+Вошёл
+<%= button_to "Log out", destroy_user_session_path, method: :delete %>
+<% else %>
+Не вошёл
+<a href="<%= new_user_session_path %>">Войти</a> 
+<% end %>
