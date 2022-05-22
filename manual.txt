@@ -28,3 +28,6 @@ Film.create!(name: "Матрица", rating: 8, year: 2008, link_youtube: "https
 Необходимо добавить пути routes.rb
 get  '/multiply/', to: 'calculators#multiply' # get - метод, /multiply/ - путь(в браузере), calculators - контроллер, multiply - функция(экшн)
 M - модель(model), V - views(templates) C - controller
+
+-----github-----
+1) Запомнить основные команды
