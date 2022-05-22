@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_scope :user do
+    post "/sign_up" => "devise/registrations#create"
+  end
   devise_for :users
   resources :films
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

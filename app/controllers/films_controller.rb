@@ -14,6 +14,7 @@ class FilmsController < ApplicationController
   # GET /films/new
   def new
     @film = Film.new
+    @film = Film.find(:all)
   end
 
   # GET /films/1/edit
@@ -25,8 +26,9 @@ class FilmsController < ApplicationController
     puts "*" * 50
     puts film_params
     puts "*" * 50
-    @film = Film.new(film_params)
-
+    @film = Film.new(comment_params)
+    @film.photo.attach(params[:film][:photo])
+    
     respond_to do |format|
       if @film.save
         format.html { redirect_to film_url(@film), notice: "Film was successfully created." }
@@ -64,7 +66,10 @@ class FilmsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_film
-      @film = Film.find(params[:id])
+      @film = Film.find(comment_params)
+      if @film.save
+        redirect_to new_film_path
+      end
     end
 
     # Only allow a list of trusted parameters through.
